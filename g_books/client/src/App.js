@@ -1,12 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import Search from "./pages/Search"
+
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
-    </div>
+      <div>
+        <Route exact path="/" component={Search} />
+
+
+      </div>
+    </Router>
   );
 }
 
