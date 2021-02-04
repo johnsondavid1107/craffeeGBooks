@@ -1,19 +1,23 @@
 import React from "react"
 
-function Card() {
+function MainCard() {
     const styles = {
         topCard: {
             marginTop: "30px",
             marginBottom: "100px"
+        },
+        contentMargin: {
+            marginTop: "20px",
+            marginBottom: "20px"
         }
     }
     return (
         <div>
-            <div className="card">
-                <div className="card-content" style={styles.topCard}>
-                    <div className="content">
+            <div className="card" style={styles.topCard}>
+                <div className="card-content" >
+                    <div className="content" style={styles.contentMargin}>
                         <p className="title is-1 is-flex is-justify-content-center">
-                            Google Books API
+                            Google Book Search!
                     </p>
                     </div>
                 </div>
@@ -22,4 +26,4 @@ function Card() {
     )
 
 }
-export default Card
+export default MainCard

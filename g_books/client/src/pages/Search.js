@@ -1,13 +1,13 @@
 import React from "react"
-import Card from "../components/Card"
 import SeachField from "../components/SearchField"
+import ResultsCard from "../components/ResultsCard"
 
 
 function Search() {
     return (
         <div>
-            <Card />
             <SeachField />
+            <ResultsCard />
         </div>
 
     )
