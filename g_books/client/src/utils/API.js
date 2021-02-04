@@ -5,7 +5,7 @@ import axios from "axios"
 
 export default {
     searchBooks: function () {
-        const APIKey = "AIzaSyD9pbo0xiBllDhJK7tlFTLeLTMt88MA2Xk"
+        const APIKey = 
 
         const URL = `https://www.googleapis.com/books/v1/volumes?q=potter&key=${APIKey}`
 
