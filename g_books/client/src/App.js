@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import Search from "./pages/Search"
+import './books.css'
 
 
 function App() {
