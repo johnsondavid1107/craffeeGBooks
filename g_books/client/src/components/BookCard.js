@@ -14,8 +14,8 @@ function BookCard() {
                     First column
                 </div>
                 <div className="column is-flex is-justify-content-flex-end">
-                    <button class="button  is-small is-primary is-outlined" style={styles.buttonMargin}>View</button>
-                    <button class="button  is-small is-link is-outlined" style={styles.buttonMargin}>Save</button>
+                    <button className="button  is-small is-primary is-outlined" style={styles.buttonMargin}>View</button>
+                    <button className="button  is-small is-link is-outlined" style={styles.buttonMargin}>Save</button>
                 </div>
 
             </div>

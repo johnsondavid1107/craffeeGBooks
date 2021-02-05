@@ -8,9 +8,11 @@ import MainCard from "./components/MainCard"
 import Saved from "./pages/Saved"
 
 
+
 function App() {
   return (
     <Router>
+
       <Navbar />
       <MainCard />
       <div>

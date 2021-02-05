@@ -7,9 +7,14 @@ class SearchField extends React.Component {
     }
 
     handleSearch = () => {
+        // API.searchBooks().then(function (res) {
+        //     console.log(res)
+        // }).catch(err => console.log(err))
+
         API.searchBooks().then(function (res) {
             console.log(res)
-        }).catch(err => console.log(err))
+        })
+            .catch(err => console.log(err))
     }
 
 

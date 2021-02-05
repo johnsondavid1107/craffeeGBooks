@@ -3,13 +3,14 @@ import React from "react"
 import axios from "axios"
 
 
+
+
 export default {
-    searchBooks: function () {
-        const APIKey = 
+    searchBooks: function (query) {
 
-        const URL = `https://www.googleapis.com/books/v1/volumes?q=potter&key=${APIKey}`
+        return axios.get('/search/books')
 
-        return axios.get(URL)
+
 
 
     }
