@@ -1,54 +1,64 @@
-import React from "react"
+import React, { useState } from "react"
 import API from "../utils/API"
+import Search from "../pages/Search";
 
-class SearchField extends React.Component {
-    state = {
-        searchField: ""
+function SearchField() {
+
+    const [find, setSearch] = useState('');
+
+    const handleInput = (event) => {
+        const { value } = event.target
+        console.log(value)
+        setSearch(value)
+        //try changing the above to event.target.value to see if it is the same thing
+
     }
 
-    handleSearch = () => {
+
+    const handleSearch = () => {
         // API.searchBooks().then(function (res) {
         //     console.log(res)
         // }).catch(err => console.log(err))
 
-        API.searchBooks().then(function (res) {
+        API.searchBooks(find).then(function (res) {
             console.log(res)
         })
             .catch(err => console.log(err))
     }
 
 
-    render() {
 
-        const styles = {
-            inputField: {
-                margin: "20px"
-            },
-            spaceResultsCard: {
-                marginBottom: "50px"
-            },
-            spaceButton: {
-                marginBottom: "20px"
-            }
+
+
+    const styles = {
+        inputField: {
+            margin: "20px"
+        },
+        spaceResultsCard: {
+            marginBottom: "50px"
+        },
+        spaceButton: {
+            marginBottom: "20px"
         }
+    }
 
 
 
 
-        return (
-            <div className="card" style={styles.spaceResultsCard} >
-                <div className="card-content">
-                    <div className="content">
-                        <p className="title is-5 is-flex">
-                            Book Search
+    return (
+        <div className="card" style={styles.spaceResultsCard} >
+            <div className="card-content">
+                <div className="content">
+                    <p className="title is-5 is-flex">
+                        Book Search
                      </p>
-                        <input className="input is-danger" type="text" placeholder="Search for your books here!" style={styles.inputField}></input>
-                        <button className="button is-pulled-right is-success is-outlined " style={styles.spaceButton} onClick={this.handleSearch}>Search!</button>
-                    </div>
+                    <input className="input is-danger" type="text" placeholder="Search for your books here!" style={styles.inputField} onChange={handleInput} value={find}></input>
+                    <button className="button is-pulled-right is-success is-outlined " style={styles.spaceButton} onClick={handleSearch}>Search!</button>
                 </div>
             </div>
-        )
+        </div>
+    )
 
-    }
+
 }
 export default SearchField

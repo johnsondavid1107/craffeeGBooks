@@ -7,8 +7,12 @@ import axios from "axios"
 
 export default {
     searchBooks: function (query) {
+        console.log(query)
 
-        return axios.get('/search/books')
+
+        return axios.get('/search/books', { params: { q: query } }).then(data => {
+            console.log(data.data.items)
+        })
 
 
 
