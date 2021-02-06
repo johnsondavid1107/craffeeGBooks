@@ -7,7 +7,7 @@ function ResultsCard(props) {
             marginBottom: "30px"
         }
     }
-    console.log(props)
+    console.log(props.books)
     return (
 
         <div>
@@ -17,7 +17,15 @@ function ResultsCard(props) {
                         <p className="title is-3 is-flex">
                             Results
                     </p>
-                        <BookCard />
+                        {props.books.map((book) => (
+                            <BookCard
+                                title={book.volumeInfo.title}
+                                key={book.id}
+                                author={book.volumeInfo.author}
+                                picture={book.volumeInfo.imageLinks.thumbnail}
+                                description={book.volumeInfo.description}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

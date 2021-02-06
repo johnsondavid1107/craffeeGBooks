@@ -57,7 +57,7 @@ function SearchField() {
                     </div>
                 </div>
             </div>
-            <ResultsCard props={booksInfo} />
+            <ResultsCard books={booksInfo} />
         </div>
     )
 

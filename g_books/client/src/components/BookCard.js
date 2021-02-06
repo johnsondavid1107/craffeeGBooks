@@ -1,6 +1,8 @@
 import React from "react"
 
-function BookCard() {
+function BookCard(props) {
+    const { title, author, picture, description } = props
+
     const styles = {
         buttonMargin: {
             margin: "5px"
@@ -11,7 +13,7 @@ function BookCard() {
         <div>
             <div className="columns">
                 <div className="column">
-                    First column
+                    {title}
                 </div>
                 <div className="column is-flex is-justify-content-flex-end">
                     <button className="button  is-small is-primary is-outlined" style={styles.buttonMargin}>View</button>
@@ -21,7 +23,7 @@ function BookCard() {
             </div>
             <div className="columns">
                 <div className="column">
-                    Title Two
+                    {author}
                 </div>
 
             </div>
@@ -33,10 +35,10 @@ function BookCard() {
             </div>
             <div className="columns">
                 <div className="column is-one-third">
-                    Image
+                    <img src={picture} alt="thumbnail book pic"></img>
                 </div>
                 <div className="column ">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero accusantium, inventore ea, error odio architecto eveniet perferendis molestiae necessitatibus sunt quod optio eius alias deserunt adipisci. Dolor ad cupiditate amet quas est commodi? In modi atque nam dolor officia nobis ipsa, ipsum, dolores accusamus commodi exercitationem sapiente voluptas aut reprehenderit harum tempore reiciendis aliquid sunt iusto libero officiis. Architecto molestiae id sed molestias, porro perspiciatis beatae velit, pariatur repudiandae in enim. Fuga dignissimos, voluptatum ipsum praesentium, voluptates natus repellendus soluta quis aut, voluptatibus cupiditate sunt sit? Voluptatem ab fugiat odio sequi nisi, optio porro sed cumque saepe corrupti, vel possimus.
+                    {description}
                 </div>
 
             </div>
