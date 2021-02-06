@@ -17,6 +17,7 @@ function ResultsCard(props) {
                         <p className="title is-3 is-flex">
                             Results
                     </p>
+
                         {props.books.map((book) => (
                             <BookCard
                                 title={book.volumeInfo.title}
@@ -28,6 +29,7 @@ function ResultsCard(props) {
                         ))}
                     </div>
                 </div>
+                <BookCard />
             </div>
         </div>
     )
