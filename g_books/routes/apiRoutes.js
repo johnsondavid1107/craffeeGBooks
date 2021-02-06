@@ -52,6 +52,16 @@ router.get("/AllSaved", (req, res) => {
     })
 })
 
+router.get("/andDelete", (req, res) => {
+
+    console.log(req.query.id)
+    let id = req.query.id
+    db.BookUser.findByIdAndDelete(id, function (err) {
+        if (err) console.log(err);
+        console.log("Delete Successful")
+    })
+})
+
 
 
 

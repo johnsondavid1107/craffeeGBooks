@@ -43,7 +43,9 @@ function BookCard(props) {
                     <div className="col"><strong>{title || "No Title Found.."} </strong> </div>
 
                     <div className="col-1 d-flex justify-content-end">
-                        <a href={link} target="_blank"><button className="button  is-small is-primary is-outlined" style={styles.buttonMargin}>View</button></a>
+                        <a href={link} target="_blank">
+                            <button className="button is-small is-primary is-outlined" style={styles.buttonMargin}>View</button>
+                        </a>
                         <button className="button is-small is-link is-outlined" style={styles.buttonMargin} onClick={handleClick} value={id}>Save</button>
                     </div>
                 </div>

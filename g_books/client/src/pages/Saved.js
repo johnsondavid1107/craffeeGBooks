@@ -1,7 +1,6 @@
 import React from "react"
 import DatabaseCard from "../components/DatabaseCard"
 import API from "../utils/API"
-import BookCard from "../components/BookCard"
 
 
 class Saved extends React.Component {
@@ -42,16 +41,16 @@ class Saved extends React.Component {
                     </div>
 
                     {this.state.books.map(entry => (
-                        <BookCard
+                        <DatabaseCard
                             title={entry.title}
-                            key={entry.id}
+                            key={entry._id}
                             author={entry.author}
                             picture={entry.picture}
                             description={entry.description}
                             subtitle={entry.subtitle}
                             pageCount={entry.pageCount}
                             link={entry.link}
-                            id={entry.id}
+                            id={entry._id}
 
                         />
                     ))}

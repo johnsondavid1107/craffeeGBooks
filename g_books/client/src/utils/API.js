@@ -22,5 +22,9 @@ export default {
     },
     findBooks: function () {
         return axios.get("/find/AllSaved", {})
+    },
+    deleteBook: function (id) {
+        console.log(id)
+        return axios.get("/find/andDelete", { params: { id } })
     }
 }
