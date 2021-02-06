@@ -19,5 +19,8 @@ export default {
     saveBooks: function (id) {
         console.log(id)
         return axios.get("/save/bookData", { params: { id } })
+    },
+    findBooks: function () {
+        return axios.get("/find/AllSaved", {})
     }
 }

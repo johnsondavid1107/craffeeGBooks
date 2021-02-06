@@ -28,6 +28,7 @@ router.get("/books", async (req, res) => {
 
 })
 router.get("/bookData", (req, res) => {
+    console.log(req.query.id)
     let bookStoreObject = JSON.parse(req.query.id)
     console.log(bookStoreObject)
 
@@ -43,6 +44,12 @@ router.get("/bookData", (req, res) => {
     }).then()
 
 
+})
+
+router.get("/AllSaved", (req, res) => {
+    db.BookUser.find({}).then(function (response) {
+        res.json(response)
+    })
 })
 
 

@@ -24,6 +24,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bookuser",
 
 app.use("/search", routes)
 app.use('/save', routes)
+app.use('/find', routes)
 
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"))
