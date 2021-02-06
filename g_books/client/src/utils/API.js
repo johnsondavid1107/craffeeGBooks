@@ -15,5 +15,8 @@ export default {
 
 
 
+    },
+    saveBooks: function (id) {
+        return axios.get("/save/bookData"), { params: { q: id } }
     }
 }

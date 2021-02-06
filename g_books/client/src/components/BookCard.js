@@ -1,9 +1,12 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react"
+import React, { useState } from "react"
+import API from "../utils/API"
+import axios from "axios"
 
 function BookCard(props) {
+    const [book, setBookSave] = useState('')
 
-    const { title, author, picture, description, subtitle, pageCount, link } = props
+    const { title, author, picture, description, subtitle, pageCount, link, id } = props
     const styles = {
         buttonMargin: {
             margin: "5px"
@@ -14,6 +17,15 @@ function BookCard(props) {
             padding: "10px"
         }
     }
+    const handleClick = () => {
+        console.log(id)
+        setBookSave(id)
+        API.searchBooks(book).then(function (res) {
+            axios.get("/save/toDatabase", res)
+        })
+
+
+    }
 
     return (
         <div className="container">
@@ -23,7 +35,7 @@ function BookCard(props) {
 
                     <div className="col-1 d-flex justify-content-end">
                         <a href={link} target="_blank"><button className="button  is-small is-primary is-outlined" style={styles.buttonMargin}>View</button></a>
-                        <button className="button  is-small is-link is-outlined" style={styles.buttonMargin}>Save</button>
+                        <button className="button is-small is-link is-outlined" style={styles.buttonMargin} onClick={handleClick} value={id}>Save</button>
                     </div>
                 </div>
                 <div className="row" style={styles.addPadding}>

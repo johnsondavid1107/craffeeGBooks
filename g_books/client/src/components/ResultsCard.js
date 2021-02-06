@@ -34,6 +34,7 @@ function ResultsCard(props) {
                         subtitle={book.volumeInfo.subtitle}
                         pageCount={book.volumeInfo.pageCount}
                         link={book.volumeInfo.canonicalVolumeLink}
+                        id={book.id}
                     />
                 ))}
 

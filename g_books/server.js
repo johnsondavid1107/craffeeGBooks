@@ -3,6 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes/apiRoutes")
+const mongoose = require('mongoose')
 
 
 
@@ -17,7 +18,12 @@ if (process.env.NODE_ENV === "production") {
 
 }
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bookuser",
+    { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+
+
 app.use("/search", routes)
+app.use('/save', routes)
 
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"))
