@@ -1,13 +1,13 @@
 import React from "react"
 import BookCard from "./BookCard"
 
-function ResultsCard() {
+function ResultsCard(props) {
     const styles = {
         spaceResults: {
             marginBottom: "30px"
         }
     }
-
+    console.log(props)
     return (
 
         <div>

@@ -1,10 +1,12 @@
 import React, { useState } from "react"
 import API from "../utils/API"
-import Search from "../pages/Search";
+import ResultsCard from "./ResultsCard"
+
 
 function SearchField() {
 
     const [find, setSearch] = useState('');
+    const [booksInfo, setBookInfo] = useState([])
 
     const handleInput = (event) => {
         const { value } = event.target
@@ -16,14 +18,11 @@ function SearchField() {
 
 
     const handleSearch = () => {
-        // API.searchBooks().then(function (res) {
-        //     console.log(res)
-        // }).catch(err => console.log(err))
-
         API.searchBooks(find).then(function (res) {
-            console.log(res)
-        })
-            .catch(err => console.log(err))
+            console.log(res.data.items)
+            setBookInfo(res.data.items)
+
+        }).catch(err => console.log(err))
     }
 
 
@@ -46,16 +45,19 @@ function SearchField() {
 
 
     return (
-        <div className="card" style={styles.spaceResultsCard} >
-            <div className="card-content">
-                <div className="content">
-                    <p className="title is-5 is-flex">
-                        Book Search
+        <div>
+            <div className="card" style={styles.spaceResultsCard} >
+                <div className="card-content">
+                    <div className="content">
+                        <p className="title is-5 is-flex">
+                            Book Search
                      </p>
-                    <input className="input is-danger" type="text" placeholder="Search for your books here!" style={styles.inputField} onChange={handleInput} value={find}></input>
-                    <button className="button is-pulled-right is-success is-outlined " style={styles.spaceButton} onClick={handleSearch}>Search!</button>
+                        <input className="input is-danger" type="text" placeholder="Search for your books here!" style={styles.inputField} onChange={handleInput} value={find}></input>
+                        <button className="button is-pulled-right is-success is-outlined " style={styles.spaceButton} onClick={handleSearch}>Search!</button>
+                    </div>
                 </div>
             </div>
+            <ResultsCard props={booksInfo} />
         </div>
     )
 
