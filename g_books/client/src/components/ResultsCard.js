@@ -16,20 +16,27 @@ function ResultsCard(props) {
                     <div className="content">
                         <p className="title is-3 is-flex">
                             Results
-                    </p>
+                            
+                        </p>
+                        <hr></hr>
 
-                        {props.books.map((book) => (
-                            <BookCard
-                                title={book.volumeInfo.title}
-                                key={book.id}
-                                author={book.volumeInfo.author}
-                                picture={book.volumeInfo.imageLinks.thumbnail}
-                                description={book.volumeInfo.description}
-                            />
-                        ))}
+
                     </div>
+
                 </div>
-                <BookCard />
+                {props.books.map((book) => (
+                    <BookCard
+                        title={book.volumeInfo.title}
+                        key={book.id}
+                        author={book.volumeInfo.authors[0]}
+                        picture={book.volumeInfo.imageLinks.thumbnail}
+                        description={book.volumeInfo.description}
+                        subtitle={book.volumeInfo.subtitle}
+                        pageCount={book.volumeInfo.pageCount}
+                        link={book.volumeInfo.canonicalVolumeLink}
+                    />
+                ))}
+
             </div>
         </div>
     )
