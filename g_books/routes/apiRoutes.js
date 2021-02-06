@@ -1,4 +1,5 @@
 require("dotenv").config()
+const db = require("../models")
 const axios = require('axios');
 
 const APIKEY = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY
@@ -14,8 +15,7 @@ router.get("/books", async (req, res) => {
 
     try {
         await axios.get(URL).then(data => {
-            console.log(data.data)
-            console.log("gottem")
+
 
             res.json(data.data)
 
@@ -27,33 +27,27 @@ router.get("/books", async (req, res) => {
 
 
 })
-router.get("/bookData", async (req, res) => {
+router.get("/bookData", (req, res) => {
+    let bookStoreObject = JSON.parse(req.query.id)
+    console.log(bookStoreObject)
 
-    const query = req.query.id
-    const URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=` + APIKEY
-
-    try {
-        await axios.get(URL).then(data => {
-            console.log(data.data)
-            console.log("gottem")
-
-            res.json(data.data)
-
-        })
-    } catch (err) {
-        console.log(err)
-    }
-
+    db.BookUser.create({
+        title: bookStoreObject.title,
+        description: bookStoreObject.description,
+        id: bookStoreObject.id,
+        link: bookStoreObject.link,
+        pageCount: bookStoreObject.pageCount,
+        picture: bookStoreObject.picture,
+        subTitle: bookStoreObject.subtitle,
+        author: bookStoreObject.author
+    }).then()
 
 
 })
 
-router.get("toDatabase"), function (req, res) {
-    console.log(req)
-}
 
 
 
-//Yow9AAAAYAAJ
+
 
 module.exports = router;

@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useState } from "react"
 import API from "../utils/API"
-import axios from "axios"
+
 
 function BookCard(props) {
-    const [book, setBookSave] = useState('')
+
 
     const { title, author, picture, description, subtitle, pageCount, link, id } = props
     const styles = {
@@ -18,11 +18,20 @@ function BookCard(props) {
         }
     }
     const handleClick = () => {
-        console.log(id)
-        setBookSave(id)
-        API.searchBooks(book).then(function (res) {
-            axios.get("/save/toDatabase", res)
-        })
+        let book = {
+            title: title,
+            author: author,
+            picture: picture,
+            description: description,
+            subtitle: subtitle,
+            pageCount: pageCount,
+            link: link,
+            id: id
+        }
+
+
+        console.log(book)
+        API.saveBooks(book)
 
 
     }

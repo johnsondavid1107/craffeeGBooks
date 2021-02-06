@@ -7,8 +7,27 @@ const bookSchema = new mongoose.Schema({
         type: String
     },
     bookID: {
+        type: String
+    },
+    author: {
+        type: Array
+    },
+    description: {
+        type: String
+    }, 
+    link: {
+        type: String
+    },
+    pageCount: {
         type: Number
+    },
+    picture: {
+        type: String
+    },
+    subTitle: {
+        type: String
     }
+
 
 
 

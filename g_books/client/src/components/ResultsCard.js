@@ -28,7 +28,7 @@ function ResultsCard(props) {
                     <BookCard
                         title={book.volumeInfo.title}
                         key={book.id}
-                        author={book.volumeInfo.authors[0]|| book.volumeInfo.authors}
+                        author={book.volumeInfo.authors}
                         picture={book.volumeInfo.imageLinks.thumbnail}
                         description={book.volumeInfo.description}
                         subtitle={book.volumeInfo.subtitle}
