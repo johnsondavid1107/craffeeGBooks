@@ -32,6 +32,7 @@ function BookCard(props) {
 
         console.log(book)
         API.saveBooks(book)
+        alert("Book has been saved to Saved Books!")
 
 
     }
