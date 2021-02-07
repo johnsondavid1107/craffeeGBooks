@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 function Navbar() {
 
     return (
-        <nav className="navbar is-light" role="navigation" aria-label="main navigation" >
+        <nav className="navbar is-dark" role="navigation" aria-label="main navigation" >
             <div className="navbar-brand">
                 <a className="navbar-start" href="#" >
                     <img src={GooglePic} alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
