@@ -17,6 +17,8 @@ function DatabaseCard(props) {
 
     const handleClick = () => {
         API.deleteBook(id)
+        alert("Successfully Deleted")
+        window.location.reload(true)
     }
 
 
