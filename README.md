@@ -13,7 +13,7 @@ I wanted to make an easier, faster, mobile friendly applicaiton to search books 
 
 How to use the app?!  Click here https://desolate-castle-67258.herokuapp.com/ for access.  
 
-<a href="" target="_blank"><img src="./homepage.png" alt="homepage"></a>
+<a href="https://desolate-castle-67258.herokuapp.com/" target="_blank"><img src="./homepage.png" alt="homepage"></a>
 
 
 # The Who
