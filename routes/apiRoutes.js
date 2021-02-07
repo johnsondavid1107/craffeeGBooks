@@ -12,9 +12,11 @@ router.get("/books", async (req, res) => {
 
     const query = req.query.q
     const URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=` + APIKEY
+    console.log(URL)
 
     try {
         await axios.get(URL).then(data => {
+            console.log(data.data)
 
 
             res.json(data.data)
