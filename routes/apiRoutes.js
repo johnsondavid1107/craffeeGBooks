@@ -11,7 +11,7 @@ console.log(APIKEY, "line8")
 router.get("/books", async (req, res) => {
 
     const query = req.query.q
-    const URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=` + APIKEY
+    const URL = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${APIKEY}`
     console.log(URL)
 
     try {
