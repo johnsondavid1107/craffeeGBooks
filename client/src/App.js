@@ -1,6 +1,6 @@
 
 import './App.css';
-import Navbar from "./components/Navbar"
+import GoogleNavBar from "./components/GoogleNavBar"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import Search from "./pages/Search"
 import './books.css'
@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
 
-      <Navbar />
+      <GoogleNavBar />
       <MainCard />
       <div>
         <Route exact path="/search" component={Search} />

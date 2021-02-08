@@ -17,7 +17,7 @@ function MainCard() {
             <div className="card" style={styles.topCard}>
                 <div className="card-content" >
                     <div className="content" style={styles.contentMargin}>
-                        <p className="title is-1 is-flex is-justify-content-center">
+                        <p className="title is-1 is-flex is-justify-content-center text-center">
                             Google Book Search!
                     </p>
                     </div>
