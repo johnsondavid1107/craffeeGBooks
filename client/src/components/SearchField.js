@@ -31,7 +31,8 @@ function SearchField() {
 
     const styles = {
         inputField: {
-            margin: "20px"
+            padding: "20px",
+            marginBottom: "10px"
         },
         spaceResultsCard: {
             marginBottom: "50px"
@@ -45,7 +46,7 @@ function SearchField() {
 
 
     return (
-        <div>
+        <div className="container">
             <div className="card" style={styles.spaceResultsCard} >
                 <div className="card-content">
                     <div className="content">

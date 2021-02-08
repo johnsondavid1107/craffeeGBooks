@@ -40,15 +40,18 @@ function BookCard(props) {
     return (
         <div className="container">
             <div className="card" style={styles.spaceCard}>
-                <div className="row" style={styles.addPadding}>
-                    <div className="col"><strong>{title || "No Title Found.."} </strong> </div>
-
-                    <div className="col-1 d-flex justify-content-end">
+                <div className="row">
+                    <div className="col d-flex justify-content-end" style={styles.buttonMargin}>
                         <a href={link} target="_blank">
                             <button className="button is-small is-primary is-outlined" style={styles.buttonMargin}>View</button>
                         </a>
                         <button className="button is-small is-link is-outlined" style={styles.buttonMargin} onClick={handleClick} value={id}>Save</button>
                     </div>
+                </div>
+                <div className="row" style={styles.addPadding}>
+                    <div className="col"><strong>{title || "No Title Found.."} </strong> </div>
+
+
                 </div>
                 <div className="row" style={styles.addPadding}>
                     <div className="col">{subtitle}</div>

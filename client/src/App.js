@@ -18,6 +18,7 @@ function App() {
       <div>
         <Route exact path="/search" component={Search} />
         <Route exact path="/saved" component={Saved} />
+        <Route exact path="/" component={Search} />
 
 
       </div>
